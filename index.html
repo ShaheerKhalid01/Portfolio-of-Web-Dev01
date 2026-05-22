@@ -777,6 +777,35 @@
     <section class="projects" id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid" style="grid-template-columns: 1fr; max-width: 700px;">
+            <!-- Amazon Clone Project -->
+            <div class="project-card">
+                <div class="project-header">🛒</div>
+                <div class="project-content">
+                    <h3 class="project-title">Amazon Clone</h3>
+                    <p class="project-description">
+                        A fully functional e-commerce platform inspired by Amazon with product management, shopping cart, order processing, and an intuitive admin dashboard for managing inventory and store operations.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">NestJS</span>
+                        <span class="tech-tag">JSON Storage</span>
+                        <span class="tech-tag">Admin Panel</span>
+                    </div>
+                    <div class="features">
+                        <strong style="color: #00a8ff;">Key Features:</strong>
+                        <div class="feature-item">Full e-commerce functionality</div>
+                        <div class="feature-item">Admin dashboard with login</div>
+                        <div class="feature-item">Product management system</div>
+                        <div class="feature-item">Shopping cart and checkout</div>
+                        <div class="feature-item">Responsive design</div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://poetic-melba-07788f.netlify.app/" class="project-link" target="_blank">Live Demo</a>
+                        <a href="javascript:void(0)" onclick="openAmazonModal()" class="project-link">Admin Access</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Tijarah Project -->
             <div class="project-card">
                 <div class="project-header">🤖</div>
@@ -803,7 +832,7 @@
                         <div class="feature-item">Responsive design for all devices</div>
                     </div>
                     <div class="project-links">
-                        <a href="https://tijarah188888888.vercel.app/en" class="project-link" target="_blank">Live
+                        <a href="https://tijarahpk010301.netlify.app/en" class="project-link" target="_blank">Live
                             Demo</a>
                         <a href="javascript:void(0)" onclick="openTijarahModal()" class="project-link">Admin Access</a>
                     </div>
@@ -857,6 +886,44 @@
         </div>
     </section>
 
+    <!-- Amazon Clone Admin Modal -->
+    <div id="amazonModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAmazonModal()">&times;</span>
+            <h2>🛒 Amazon Clone Admin Panel</h2>
+            <p>Access the admin panel to manage products and store operations. Use the credentials below:</p>
+
+            <div class="admin-creds">
+                <div class="cred-line">
+                    <span class="cred-label">Email:</span>
+                    <span class="cred-value">admin@amazonclone.com</span>
+                </div>
+                <div class="cred-line">
+                    <span class="cred-label">Password:</span>
+                    <span class="cred-value">Admin@123</span>
+                </div>
+            </div>
+
+            <h3 style="color: #64d9ff; margin-top: 2rem; margin-bottom: 1rem;">Working Features:</h3>
+            <ul style="margin-left: 1.5rem; color: #b0b0b0;">
+                <li style="margin: 0.5rem 0;"><span class="highlight">Admin Authentication</span> - Secure login system</li>
+                <li style="margin: 0.5rem 0;"><span class="highlight">Product Management</span> - Full CRUD operations</li>
+                <li style="margin: 0.5rem 0;"><span class="highlight">Admin Dashboard</span> - Complete control panel for store management</li>
+            </ul>
+
+            <div
+                style="margin-top: 2rem; padding: 1rem; background: rgba(0, 168, 255, 0.08); border-radius: 4px; border-left: 3px solid #00a8ff;">
+                <p style="color: #00a8ff; font-weight: bold; margin-bottom: 0.5rem;">💡 Pro Tip:</p>
+                <p style="color: #b0b0b0; font-size: 0.95rem;">Navigate through the store to see all product categories and features. Use admin access to manage the store inventory.</p>
+            </div>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                <a href="https://poetic-melba-07788f.netlify.app/" class="btn btn-primary" target="_blank">Open Live Store</a>
+                <button class="btn btn-secondary" onclick="closeAmazonModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Tijarah Admin Modal -->
     <div id="tijarahModal" class="modal">
         <div class="modal-content">
@@ -867,7 +934,7 @@
             <div class="admin-creds">
                 <div class="cred-line">
                     <span class="cred-label">URL:</span>
-                    <span class="cred-value">https://tijarah188888888.vercel.app/en/admin-auth/login</span>
+                    <span class="cred-value">https://tijarahpk010301.netlify.app/en/admin-auth/login</span>
                 </div>
                 <div class="cred-line">
                     <span class="cred-label">Email:</span>
@@ -907,9 +974,9 @@
             </div>
 
             <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-                <a href="https://tijarah188888888.vercel.app/en/admin-auth/login?callbackUrl=%2Fen%2Fadmin"
+                <a href="https://tijarahpk010301.netlify.app/en/admin-auth/login?callbackUrl=%2Fen%2Fadmin"
                     class="btn btn-primary" target="_blank">Open Admin Panel</a>
-                <a href="https://tijarah188888888.vercel.app/en" class="btn btn-secondary" target="_blank">View Live
+                <a href="https://tijarahpk010301.netlify.app/en" class="btn btn-secondary" target="_blank">View Live
                     Store</a>
             </div>
         </div>
@@ -984,6 +1051,14 @@
 
     <script>
         // Modal Functions
+        function openAmazonModal() {
+            document.getElementById('amazonModal').style.display = 'block';
+        }
+
+        function closeAmazonModal() {
+            document.getElementById('amazonModal').style.display = 'none';
+        }
+
         function openTijarahModal() {
             document.getElementById('tijarahModal').style.display = 'block';
         }
@@ -1002,8 +1077,12 @@
 
         // Close modal when clicking outside
         window.onclick = function (event) {
+            const amazonModal = document.getElementById('amazonModal');
             const tijarahModal = document.getElementById('tijarahModal');
             const contactModal = document.getElementById('contactModal');
+            if (event.target == amazonModal) {
+                amazonModal.style.display = 'none';
+            }
             if (event.target == tijarahModal) {
                 tijarahModal.style.display = 'none';
             }
