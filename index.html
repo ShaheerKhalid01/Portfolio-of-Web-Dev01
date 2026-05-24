@@ -762,6 +762,7 @@
             </div>
             <div class="cta-buttons">
                 <button class="btn btn-primary" onclick="scrollToProjects()">View My Work</button>
+                <a href="Shaheer_Khalid_Resume.docx" download class="btn btn-primary" style="text-decoration: none;">📄 Download Resume</a>
                 <button class="btn btn-secondary" onclick="openContactModal()">Get In Touch</button>
             </div>
         </div>
@@ -914,6 +915,45 @@
             </div>
         </div>
     </section>
+
+    <!-- AQUA RO Filter Admin Modal -->
+    <div id="aquaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAquaModal()">&times;</span>
+            <h2>💧 AQUA RO Filter Admin Panel</h2>
+            <p>Access the admin panel to manage water filter products and store operations. Use the credentials below:</p>
+
+            <div class="admin-creds">
+                <div class="cred-line">
+                    <span class="cred-label">Email:</span>
+                    <span class="cred-value">admin</span>
+                </div>
+                <div class="cred-line">
+                    <span class="cred-label">Password:</span>
+                    <span class="cred-value">AdminSecure2024</span>
+                </div>
+            </div>
+
+            <h3 style="color: #64d9ff; margin-top: 2rem; margin-bottom: 1rem;">Working Features:</h3>
+            <ul style="margin-left: 1.5rem; color: #b0b0b0;">
+                <li style="margin: 0.5rem 0;"><span class="highlight">Admin Authentication</span> - Secure login system</li>
+                <li style="margin: 0.5rem 0;"><span class="highlight">Product Management</span> - Full CRUD operations for water filter products</li>
+                <li style="margin: 0.5rem 0;"><span class="highlight">Inventory Control</span> - Complete control panel for store management</li>
+                <li style="margin: 0.5rem 0;"><span class="highlight">Order Management</span> - Track and manage customer orders</li>
+            </ul>
+
+            <div
+                style="margin-top: 2rem; padding: 1rem; background: rgba(0, 168, 255, 0.08); border-radius: 4px; border-left: 3px solid #00a8ff;">
+                <p style="color: #00a8ff; font-weight: bold; margin-bottom: 0.5rem;">💡 Pro Tip:</p>
+                <p style="color: #b0b0b0; font-size: 0.95rem;">Explore the full product catalog of water purification systems. Use admin access to manage the store's inventory and operations.</p>
+            </div>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                <a href="https://aqua-tai.netlify.app/" class="btn btn-primary" target="_blank">Open Live Store</a>
+                <button class="btn btn-secondary" onclick="closeAquaModal()">Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Amazon Clone Admin Modal -->
     <div id="amazonModal" class="modal">
@@ -1080,6 +1120,14 @@
 
     <script>
         // Modal Functions
+        function openAquaModal() {
+            document.getElementById('aquaModal').style.display = 'block';
+        }
+
+        function closeAquaModal() {
+            document.getElementById('aquaModal').style.display = 'none';
+        }
+
         function openAmazonModal() {
             document.getElementById('amazonModal').style.display = 'block';
         }
@@ -1106,9 +1154,13 @@
 
         // Close modal when clicking outside
         window.onclick = function (event) {
+            const aquaModal = document.getElementById('aquaModal');
             const amazonModal = document.getElementById('amazonModal');
             const tijarahModal = document.getElementById('tijarahModal');
             const contactModal = document.getElementById('contactModal');
+            if (event.target == aquaModal) {
+                aquaModal.style.display = 'none';
+            }
             if (event.target == amazonModal) {
                 amazonModal.style.display = 'none';
             }
